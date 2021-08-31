@@ -153,11 +153,11 @@ body{
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
 <script>
+	
 var url = new URL(window.location.href);
 
- if (url.searchParams.get('organization-key')) {
-  //alert("These are your assessments");
-	 modifyLinks();
+ if (url.searchParams.get('organization-key')) { //checks if organization key is available
+     modifyLinks();
 }	
 
 function modifyLinks()
@@ -166,17 +166,13 @@ function modifyLinks()
  var links = document.querySelectorAll("a");
  for(var i = 0, len = links.length; i < len; i++){
       var link = links[i].href;
-      if(link.includes("external=")){
-	      links[i].href=link.concat("&org=455656");
-          //links[i].target = "_blank";
-          //links[i].onclick = "return false";
+      if(link.includes("external=")) //checks if a link is an anchor assessment link and adds organization key to all that matches
+      {
+	     links[i].href=link.concat("&org=455656");
       }
    }
 }
-	
- function endsWith(text,target){
-    return text.indexOf(target) == text.length - target.length;
- }	
+		
 	
 </script>
 </html>
