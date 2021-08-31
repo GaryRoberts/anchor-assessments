@@ -37,8 +37,8 @@ body{
     <h3>Join assessments as specific organization</h3>
   <!-- key input -->
   <div class="form-outline mb-4">
-     <label class="form-label" for="organization-key">Paste organization key below</label>
-    <input type="text" id="organization-key" class="form-control" />
+     <label class="form-label" for="key">Paste organization key below</label>
+    <input type="text" id="key" class="form-control" />
     
   </div>
 
@@ -79,13 +79,13 @@ body{
 
    
 <script>
-   var orgKey = document.getElementById("organization-key").value;
+   var orgKey = document.getElementById("key").value;
    var testKey="34374344dfjdfsdfjsdf";
    
    var submit = document.getElementsByTagName('input')[1];
    submit.onclick = function() {
       alert(orgKey);
-      // window.location.href = "https://garyroberts.github.io/anchor-assessments/?organization-key="+testKey;
+      // window.location.href = "https://garyroberts.github.io/anchor-assessments/?organization-key="+orgKey;
    }
    
  </script>
