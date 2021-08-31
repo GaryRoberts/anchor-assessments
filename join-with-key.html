@@ -35,10 +35,10 @@ body{
    
  <form class="custom-form">
     <h3>Join assessments as specific organization</h3>
-  <!-- Email input -->
+  <!-- key input -->
   <div class="form-outline mb-4">
-     <label class="form-label" for="form1Example1">Paste organization key below</label>
-    <input type="text" id="form1Example1" class="form-control" />
+     <label class="form-label" for="organization-key">Paste organization key below</label>
+    <input type="text" id="organization-key" class="form-control" />
     
   </div>
 
@@ -75,5 +75,16 @@ body{
 <!-- MDB core JavaScript -->
 <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdbootstrap/4.19.1/js/mdb.min.js"></script>
 
+   
+<script>
+   var orgKey = document.getElementById("organization-key").value;
+   
+   var submit = document.getElementsByTagName('button')[0];
+   submit.onclick = function() {
+       window.location.href = "https://garyroberts.github.io/anchor-assessments/?organization-key="+orgKey;
+   }
+   
+ </script>
+   
 </html>
 
