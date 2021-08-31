@@ -156,7 +156,27 @@ body{
 var url = new URL(window.location.href);
 
  if (url.searchParams.get('organization-key')) {
-  alert("These are your assessments");
+  //alert("These are your assessments");
+	 modifyLinks();
 }	
+
+function modifyLinks()
+{
+		
+ var links = document.querySelectorAll("a");
+ for(var i = 0, len = links.length; i < len; i++){
+      var link = links[i].href;
+      if(link.includes("external=")){
+	      links[i].href="www.google.com";
+          //links[i].target = "_blank";
+          //links[i].onclick = "return false";
+      }
+   }
+}
+	
+ function endsWith(text,target){
+    return text.indexOf(target) == text.length - target.length;
+ }	
+	
 </script>
 </html>
