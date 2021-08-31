@@ -167,7 +167,7 @@ function modifyLinks()
  for(var i = 0, len = links.length; i < len; i++){
       var link = links[i].href;
       if(link.includes("external=")){
-	      links[i].href=link.concat("org=455656");
+	      links[i].href=link.concat("&org=455656");
           //links[i].target = "_blank";
           //links[i].onclick = "return false";
       }
