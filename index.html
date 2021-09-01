@@ -157,10 +157,10 @@ body{
 var url = new URL(window.location.href);
 
  if (url.searchParams.get('organization-key')) { //checks if organization key is available
-     modifyLinks();
+     modifyLinks(url.searchParams.get('organization-key'));
 }	
 
-function modifyLinks()
+function modifyLinks(organizationKey)
 {
 		
  var links = document.querySelectorAll("a");
@@ -168,7 +168,7 @@ function modifyLinks()
       var link = links[i].href;
       if(link.includes("external=")) //checks if a link is an anchor assessment link and adds organization key to all that matches
       {
-	     links[i].href=link.concat("&org=455656");
+	     links[i].href=link.concat("&org="+organizationKey);
       }
    }
 }
